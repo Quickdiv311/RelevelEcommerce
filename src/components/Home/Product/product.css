@@ -1,0 +1,23 @@
+img{
+    height: 270px;
+    width: 260px;
+    margin: auto;
+}
+
+.card{
+    width: 15%;
+    margin: 15px;
+}
+
+.card-body
+{
+    text-align: center;
+}
+
+.flex-box{
+    margin: auto;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}

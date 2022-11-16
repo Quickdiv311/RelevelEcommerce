@@ -1,0 +1,29 @@
+.navbar-nav
+{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.navbar-brand
+{
+    margin-left: 15px;
+}
+.nav-item
+{
+    margin-right: 15px;
+}
+.navLink
+{
+    color: black;
+}
+
+.cart-icon
+{
+    top: 10px;
+}
+
+.navbar-light
+{
+    background-color: #e3f2fd;
+}
