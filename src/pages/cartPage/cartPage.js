@@ -17,9 +17,9 @@ function CartPage()
         <Header/>
         <div>
             {
-            cartItems.map((item,index) => {
+            cartItems.map((item,index) => (
                 <CartItem item={item} index={index}/>
-            })
+            ))
             }
         </div>
         </div>

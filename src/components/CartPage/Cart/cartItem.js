@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './cartItem.css';
 
 function CartItem(object)
 { 
@@ -13,7 +14,7 @@ function CartItem(object)
        </div>
        <div>&#8377; {object.item.price}</div>
 
-       <span>{quantity} <button onClick={() => setQuantity(q => q+1)}>+</button></span>
+       <div>{quantity} <button onClick={() => setQuantity(q => q+1)}>+</button></div>
     </div>
   );
 }

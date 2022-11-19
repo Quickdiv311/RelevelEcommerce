@@ -19,11 +19,11 @@ function Home(){
          <Header/>
          <div className="row">
            {
-              products.map((product,i) => {
+              products.map((product,i) => (
                 <div className="col-3">
                 <Product item={product} index={i}/>
                 </div>
-              })
+              ))
            }   
         </div>
         <Footer/>

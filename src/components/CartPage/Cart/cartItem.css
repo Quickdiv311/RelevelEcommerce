@@ -1,7 +1,6 @@
 .cart-item
 {
     display: flex;
-    justify-content: space-evenly;
     border: 1px solid gray;
     border-radius: 10px;
     height: 200px;
