@@ -8,7 +8,7 @@ function Home(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      fetch("product.json")
+      fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((res) => setProducts(res));  
     }, []);

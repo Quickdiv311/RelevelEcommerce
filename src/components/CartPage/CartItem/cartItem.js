@@ -22,10 +22,10 @@ function CartItem(prop)
             <h4>&#8377; {prop.item.price}</h4>
        </div>
 
-       <div className="quantity">
-       <button className="btn btn-minus">-</button>
-          <span>{quantity}</span>
-          <button className="btn btn-plus">+</button>
+       <div className="quantity btn-group">
+       <button className="btn btn-minus" onClick={() => setQuantity(quantity > 0 ? quantity-1 : quantity)}>-</button>
+          <button className="btn btn-primary">{quantity}</button>
+          <button className="btn btn-plus" onClick={() => setQuantity(quantity+1)}>+</button>
        </div>
        </div>
     </div>

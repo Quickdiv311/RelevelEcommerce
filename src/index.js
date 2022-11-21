@@ -5,10 +5,12 @@ import Home from './pages/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import CartPage from './pages/cartPage/cartPage';
+import Register from './pages/Register/Register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Home/>
+    // <Home/>
     // <CartPage/>
+       <Register/>
 );
 

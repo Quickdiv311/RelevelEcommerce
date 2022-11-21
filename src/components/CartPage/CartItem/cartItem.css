@@ -53,16 +53,19 @@ span
   text-align: center;
 }
 
+.btn-group
+{
+    border-radius: 10px;
+}
+
 .btn-plus
 {
-    border-left: 1px solid gray;
-    border-radius: 0%;
+    border-radius: 10px;
 }
 
 .btn-minus
 {
-    border-right: 1px solid gray;
-    border-radius: 0%;
+    border-radius: 10px;
 }
 
 
