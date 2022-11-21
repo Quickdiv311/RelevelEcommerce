@@ -8,7 +8,7 @@ import CartPage from './pages/cartPage/cartPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <Home/>
-    <CartPage/>
+    <Home/>
+    // <CartPage/>
 );
 

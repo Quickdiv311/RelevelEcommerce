@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CartItem from "../../components/CartPage/Cart/cartItem";
+import CartItem from "../../components/CartPage/CartItem/cartItem";
 import Header from "../../components/shared/header/header";
 
 function CartPage()

@@ -1,17 +1,10 @@
 img{
     height: 270px;
     width: 260px;
-    margin: auto;
 }
 
 .card{
-    width: 15%;
-    margin: 15px;
-}
-
-.card-body
-{
-    text-align: center;
+    margin: 16px;
 }
 
 .flex-box{

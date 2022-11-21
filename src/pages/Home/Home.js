@@ -1,6 +1,6 @@
 import Header from '../../components/shared/header/header';
 import Footer from '../../components/shared/footer/footer';
-import Product from '../../components/Home/Product/product';
+import Product from '../../components/Home/Product/ProductCard';
 import { useState,useEffect } from 'react';
 
 function Home(){
