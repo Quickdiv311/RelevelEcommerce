@@ -6,11 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import CartPage from './pages/cartPage/cartPage';
 import Register from './pages/Register/Register';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <BrowserRouter>
+     <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/cart" element={<CartPage/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
+     </Routes>
+    </BrowserRouter>
     // <Home/>
     // <CartPage/>
-       <Register/>
+    //    <Register/>
 );
 

@@ -1,5 +1,6 @@
 import './Register.css';
 import { useState,useEffect } from 'react';
+import Header from '../../components/shared/header/header';
 
 
 function Register() {
@@ -13,6 +14,8 @@ function Register() {
      }
 
       return(
+        <div>
+               <Header/>
           <div className="registration-form">
                <h3>Please Register</h3>
                <hr />
@@ -36,14 +39,6 @@ function Register() {
                    name="lastName" className="form-control" placeholder='LastName' />
                   </div>
                   </div>
-
-                  <div className="mb-3">
-                      <label htmlFor="" className="form-label">Email</label>
-                      <input onInput={e => {
-                        user.email = e.target.value;
-                      }} type="text" name="email" className="form-control" />
-                  </div>
-
                   
                   <div className="mb-3">
                       <label htmlFor="" className="form-label">UserName</label>
@@ -52,6 +47,13 @@ function Register() {
                         user.userName = e.target.value;
                       }}
                       type="text" name="userName" className="form-control" />
+                  </div>
+
+                  <div className="mb-3">
+                      <label htmlFor="" className="form-label">Email</label>
+                      <input onInput={e => {
+                        user.email = e.target.value;
+                      }} type="email" name="email" className="form-control" />
                   </div>
 
                   <div className="mb-3">
@@ -114,6 +116,7 @@ function Register() {
 
                   <button type="submit" className="float-end btn btn-success">Register</button>
                </form>
+          </div>
           </div>
       );
 }

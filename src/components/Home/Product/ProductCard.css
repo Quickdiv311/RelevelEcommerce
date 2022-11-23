@@ -1,4 +1,4 @@
-img{
+.card-image{
     height: 270px;
     width: 260px;
 }
@@ -12,6 +12,11 @@ img{
 
 .card{
     margin: 16px;
+}
+
+.card-image-container
+{
+    margin: auto;
 }
 
 .flex-box{
