@@ -1,0 +1,43 @@
+.container
+{
+    margin: 5% auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: black;
+    width: 400px;
+    color: white;
+}
+
+.facebook-img
+{
+    width: 20px; margin: 5px; height: 20px;
+}
+
+.btn-pair
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.facebook-btn
+{
+   margin: 10px auto;
+}
+
+.google-btn
+{
+    background-color: white;
+    margin: 10px;
+}
+
+.google-img
+{
+    width: 20px; margin: 5px; height: 20px;
+}
+
+.email-btn
+{
+    background-color:black;color: white; height: 44px
+}

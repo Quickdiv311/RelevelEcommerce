@@ -8,7 +8,7 @@ function Home(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      fetch("https://fakestoreapi.com/products")
+      fetch("https://fakestoreapi.com/products?limit=8")
       .then((res) => res.json())
       .then((res) => setProducts(res));  
     }, []);
@@ -20,8 +20,8 @@ function Home(){
          <div className="row">
            {
               products.map((product,i) => (
-                <div className="col-3">
-                <Product item={product} index={i}/>
+                <div className="col-12   col-md-3">
+                <Product key={product.id} item={product} index={i}/>
                 </div>
               ))
            }   

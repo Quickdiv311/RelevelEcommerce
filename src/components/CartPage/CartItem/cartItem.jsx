@@ -9,16 +9,16 @@ function CartItem(prop)
   return(
     <div className="cart-item">
        <div className="container-1">
-       <div className="container">
+       <div className="cart-container">
             <img src={prop.item.image}></img>
        </div>
-       <div className="container">
-           <h4>{prop.item.name}</h4>
+       <div className="cart-container">
+           <h4>{prop.item.title}</h4>
        </div>
        </div>
 
        <div className="container-2">
-       <div className="container">
+       <div className="cart-container">
             <h4>&#8377; {prop.item.price}</h4>
        </div>
 

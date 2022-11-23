@@ -7,7 +7,7 @@ function CartPage()
    const [cartItems, setCartItem] = useState([]);
 
    useEffect(() => {
-       fetch("product.json")
+       fetch("https://fakestoreapi.com/products?limit=8")
        .then(res => res.json())
        .then(res => setCartItem(res))
    })
