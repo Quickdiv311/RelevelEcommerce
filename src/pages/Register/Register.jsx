@@ -1,16 +1,23 @@
 import './Register.css';
 import { useState,useEffect } from 'react';
 import Header from '../../components/shared/header/header';
+import { useNavigate } from 'react-router-dom';
 
 
 function Register() {
     
      const [user, setUser] = useState({});
+    const navigate = useNavigate();
+
 
      function handleSubmit(e)
      {
-      console.log(user.name);
-        console.log(user.address);
+      console.log()
+     }
+
+     function handleClick()
+     {
+       navigate('/login')
      }
 
       return(
@@ -22,7 +29,7 @@ function Register() {
 
                <form action="" onSubmit={handleSubmit}>
                 <div className="row">
-                  <div className="mb-3 col-6">
+                  <div className="mb-3 col-12 col-md-6">
                       <input onInput={(e) => {
                         if(!user.name) user.name = {};
                         user.name.firstName = e.target.value;
@@ -31,7 +38,7 @@ function Register() {
                   type="text" name="firstName" className="form-control" placeholder='First Name' />
                   </div>
 
-                  <div className="mb-3 col-6">
+                  <div className="mb-3 col-12 col-md-6">
                       <input type="text" onInput={(e) => {
                         if(!user.name) user.name = {};
                         user.name.lastName = e.target.value;
@@ -76,46 +83,45 @@ function Register() {
                   <h4>Address</h4>
                   <br />
                   <div className="row">
-                  <div className="mb-3 col-6">
+                  <div className="mb-3 col-12 col-lg-6">
                       <input onInput={e => {
                         if(!user.address) user.address = {};
-                        user.address.flatNo = e.target.value;
-                      }} type="number" name="flatNo" className="form-control" placeholder='Flat no'/>
+                        user.address.number = e.target.value;
+                      }} type="number" name="number" className="form-control" placeholder='Flat no'/>
                   </div>
 
-                  <div className="mb-3 col-6">
+                  <div className="mb-3 col-12 col-lg-6">
                       <input onInput={e => {
                         if(!user.address) user.address = {};
                         user.address.street = e.target.value;
-                      }} type="text" name="street" className="form-control" placeholder='Street/Apartment'/>
+                      }} type="text" name="street" className="form-control" placeholder='Street'/>
                   </div>
                   </div>
 
                   <div className="row">
-                  <div className="mb-3 col-6">
-                      <input onInput={e => {
-                        if(!user.address) user.address = {};
-                        user.address.locality = e.target.value;
-                      }} type="text" name="locality" className="form-control" placeholder='Locality'/>
-                  </div>
-
-                  <div className="mb-3 col-6">
+                  <div className="mb-3 col-12 col-md-6">
                       <input onInput={e => {
                         if(!user.address) user.address = {};
                         user.address.city = e.target.value;
                       }} type="text" name="city" className="form-control" placeholder='City'/>
                   </div>
-                  </div>
 
-                  <div className="mb-3 col-3">
+                  <div className="mb-3 col-6">
                       <input onInput={e => {
                         if(!user.address) user.address = {};
-                        user.address.pinCode = e.target.value;
-                      }} type="text" name="pin" className="form-control" placeholder='Pin code'/>
+                        user.address.zipCode = e.target.value;
+                      }} type="text" name="zipCode" className="form-control" placeholder='Zip code'/>
+                  </div>
                   </div>
 
                   <button type="submit" className="float-end btn btn-success">Register</button>
+                  <br />
+                  <br />
+                  <hr />
+                 
                </form>
+               <p>Already a User?</p>
+                  <button className="btn btn-danger" onClick={handleClick}>Sign IN</button>
           </div>
           </div>
       );
