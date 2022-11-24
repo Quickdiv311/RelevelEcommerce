@@ -24,6 +24,11 @@
     width: fit-content;
 }
 
+.delete-btn
+{
+    fill: black;
+}
+
 img
 {
     height: 50px;

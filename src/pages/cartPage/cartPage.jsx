@@ -7,10 +7,11 @@ function CartPage()
    const [cartItems, setCartItem] = useState([]);
 
    useEffect(() => {
-       fetch("https://fakestoreapi.com/products?limit=8")
+       fetch("product.json")
        .then(res => res.json())
        .then(res => setCartItem(res))
    })
+
 
     return(
         <div>
@@ -18,10 +19,12 @@ function CartPage()
         <div>
             {
             cartItems.map((item,index) => (
-                <CartItem item={item} index={index}/>
+                <CartItem key={item.id} item={item} index={index}/>
             ))
             }
         </div>
+        <hr />
+        <h3>Your Grand total is : </h3>
         </div>
     );
 }
