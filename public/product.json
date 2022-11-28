@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name":"iPhone 14",
         "price":"95000",
         "detail":"Created By Apple",
@@ -7,6 +8,7 @@
         "quantity": 1    
     },
     {
+        "id": 2,
         "name":"MI Power Bank Hypersonic",
         "price":"4000",
         "detail":"20000mAh 50W Lithium Polymer Supports Laptop Charging 50W Mobile Charging | Power Delivery 3.0 Fast Charging | Triple Output Port",
@@ -15,6 +17,7 @@
     }
     ,
     {
+        "id": 3,
         "name":"Vibez",
         "price":"450",
         "detail":"Vibez by Lifelong Gaming Earphones with External Mic| In-Ear Gaming Wired Headphones| Gaming Headset|Gaming Earphone with Detachable Microphone for PC, PS4, Mobiles, Tablets (VBGE01 Quest ,1 Year Warranty, Black)",
@@ -23,6 +26,7 @@
     },
 
     {
+        "id": 4,
         "name":"Canon EOS 200D",
         "price":"56000",
         "detail":"24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black)",
@@ -31,6 +35,7 @@
     },
 
     {
+        "id": 5,
         "name":"TP-link N300 WiFi Wireless Router",
         "price":"619",
         "detail":"TL-WR845N | 300Mbps Wi-Fi Speed | Three 5dBi high gain Antennas | IPv6 Compatible | AP/RE/WISP Mode | Parental Control | Guest Network",
@@ -39,6 +44,7 @@
     },
 
     {
+        "id": 6,
         "name":"2021 Apple 10.2-inch (25.91 cm) iPad",
         "price":"30000",
         "detail":"with A13 Bionic chip (Wi-Fi, 64GB) - Space Grey (9th Generation)",
@@ -47,6 +53,7 @@
     },
 
     {
+        "id": 7,
         "name":"2022 Apple TV ",
         "price":"50000",
         "detail":"4K Wi‑Fi with 64GB Storage (3rd Generation)",

@@ -29,7 +29,7 @@ function CartPage()
 
    function removeItem(item)
    {
-    let cartItemIndex = cartItems.findIndex(i => i.name === item.name);
+    let cartItemIndex = cartItems.findIndex(i => i.id === item.id);
     cartItems.splice(cartItemIndex,1);
     setCartItem(cartItems);
    }
