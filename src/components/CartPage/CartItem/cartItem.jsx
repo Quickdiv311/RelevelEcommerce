@@ -3,24 +3,15 @@ import './cartItem.css';
 
 function CartItem(prop)
 { 
-    let key = Number(prop.item.id);
     let [quantity, setQuantity] = useState(1);
     let [price, setPrice] = useState(prop.item.price);
 
     function handleQuantityChange(value)
     {
-        if(value > 0)
-        {
-             price = Number(prop.item.price) * value;
-             setQuantity(value);
-             setPrice(price);
-        }
-        else
-        {
-           price = 0;
-           setQuantity(value);
-             setPrice(price);
-        }
+          price = Number(prop.item.price) * value;
+          setQuantity(value);
+          setPrice(price);
+          prop.updatePrice(prop.item,value);
     }
 
   return(
@@ -30,7 +21,7 @@ function CartItem(prop)
             <img src={prop.item.image}></img>
        </div>
        <div className="cart-container">
-           <h4>{prop.item.title}</h4>
+           <h4>{prop.item.name}</h4>
        </div>
        </div>
 
