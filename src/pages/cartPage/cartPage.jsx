@@ -16,7 +16,7 @@ function CartPage()
         updateTotalPrice(res);
         setCartItem(res);
    })
-   })
+   },[]);
 
 
    function updatePrice(item,quantityUp)
@@ -25,6 +25,13 @@ function CartPage()
       cartItems[cartItemIndex].quantity=quantityUp;
       setCartItem(cartItems);
       updateTotalPrice(cartItems);
+   }
+
+   function removeItem(item)
+   {
+    let cartItemIndex = cartItems.findIndex(i => i.name === item.name);
+    cartItems.splice(cartItemIndex,1);
+    setCartItem(cartItems);
    }
 
    function updateTotalPrice(res)
@@ -43,7 +50,7 @@ function CartPage()
         <div>
             {
             cartItems.map((item,index) => (
-                <CartItem updatePrice={updatePrice} key={item.id} item={item} index={index}/>
+                <CartItem updatePrice={updatePrice} removeItem={removeItem} key={item.id} item={item} index={index}/>
             ))
             }
         </div>
