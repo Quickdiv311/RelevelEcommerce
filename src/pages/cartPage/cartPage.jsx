@@ -31,7 +31,8 @@ function CartPage()
    {
     let cartItemIndex = cartItems.findIndex(i => i.id === item.id);
     cartItems.splice(cartItemIndex,1);
-    setCartItem(cartItems);
+    setCartItem(cartItems.slice());
+    updateTotalPrice(cartItems);
    }
 
    function updateTotalPrice(res)
