@@ -9,6 +9,32 @@ function ProductCard(values) {
     stars[i] = 1;
   }
 
+  function handleAddToCart()
+  {
+    let cart = localStorage.getItem('cart');
+
+    if(!cart)
+    {
+      let cartItems = [];
+      cartItems.push(values.item);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+    else
+    {
+      let cartItems = JSON.parse(cart);
+      if(cartItems.find(i=> i.id==values.item.id))
+      {
+          let cartItem = cartItems.find(i=> i.id==values.item.id);
+          cartItem.quantity +=1;
+      }
+      else
+      {
+        cartItems.push(values.item);  
+      }
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+  }
+
   return (
     <div className="card">
     <h5 className="card-title">{values.item.title}</h5>
@@ -18,6 +44,7 @@ function ProductCard(values) {
     <hr />
     <div className="card-body">
       <p className="card-text">{values.item.category}</p>
+      <p className="card-text">&#8377; {values.item.price}</p>
       <p className="stars">
         {stars.map((x) => (
           <svg
@@ -33,7 +60,7 @@ function ProductCard(values) {
         &nbsp;&nbsp;
       </p>
       <p className="card-text">{values.item.description}</p>
-      <a href="#" className="btn btn-success flex-box">
+      <button href="#" className="btn btn-success flex-box" onClick={() => handleAddToCart()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -48,7 +75,7 @@ function ProductCard(values) {
           <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
         </svg>
         &nbsp;Cart
-      </a>
+      </button>
     </div>
   </div>
   );

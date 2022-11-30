@@ -3,7 +3,7 @@ import './cartItem.css';
 
 function CartItem(prop)
 { 
-    let [quantity, setQuantity] = useState(1);
+    let [quantity, setQuantity] = useState(prop.item.quantity);
     let [price, setPrice] = useState(prop.item.price);
 
     function handleQuantityChange(value)
@@ -26,7 +26,7 @@ function CartItem(prop)
             <img src={prop.item.image}></img>
        </div>
        <div className="cart-container">
-           <h4>{prop.item.name}</h4>
+           <h4>{prop.item.title}</h4>
        </div>
        </div>
 

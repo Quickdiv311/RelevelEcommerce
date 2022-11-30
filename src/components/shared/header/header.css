@@ -18,9 +18,9 @@
     color: black;
 }
 
-.cart-icon
+svg.bi-cart
 {
-    top: 10px;
+    fill: black;
 }
 
 .navbar-light

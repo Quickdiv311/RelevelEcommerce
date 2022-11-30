@@ -9,13 +9,10 @@ function CartPage()
    const [total, setTotal] = useState(0);
 
    useEffect(() => {
-       fetch("product.json")
-       .then(res => res.json())
-       .then(res => 
-        {
-        updateTotalPrice(res);
-        setCartItem(res);
-   })
+     let cart = localStorage.getItem('cart');
+     let cartItems = JSON.parse(cart);
+     setCartItem(cartItems);
+     updateTotalPrice(cartItems);
    },[]);
 
 
@@ -23,6 +20,7 @@ function CartPage()
    {
       let cartItemIndex = cartItems.findIndex(i => i.name === item.name);
       cartItems[cartItemIndex].quantity=quantityUp;
+    localStorage.setItem('cart',JSON.stringify(cartItems));
       setCartItem(cartItems);
       updateTotalPrice(cartItems);
    }
@@ -31,6 +29,7 @@ function CartPage()
    {
     let cartItemIndex = cartItems.findIndex(i => i.id === item.id);
     cartItems.splice(cartItemIndex,1);
+    localStorage.setItem('cart',JSON.stringify(cartItems));
     setCartItem(cartItems.slice());
     updateTotalPrice(cartItems);
    }

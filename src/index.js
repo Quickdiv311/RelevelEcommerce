@@ -20,8 +20,5 @@ root.render(
 
      </Routes>
     </BrowserRouter>
-    // <Home/>
-    // <CartPage/>
-    //    <Register/>
 );
 

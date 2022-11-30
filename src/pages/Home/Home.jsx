@@ -10,7 +10,14 @@ function Home(){
     useEffect(() => {
       fetch("https://fakestoreapi.com/products?limit=8")
       .then((res) => res.json())
-      .then((res) => setProducts(res));  
+      .then((res) => {
+        res.forEach(o=>{
+          o.quantity=1;
+          o.price=Math.floor(o.price*81);
+          o.rating.rate=Math.ceil(Number(o.rating.rate));
+        })
+        setProducts(res);
+      }); 
     }, []);
 
 
