@@ -49,13 +49,25 @@ function CartPage()
         <Header/>
         <div>
             {
+            cartItems.length == 0 ?
+            <div className="mini-container">
+              <h2>Your Cart Is Empty</h2>
+              <br />
+              <a href='/' className="btn btn-primary">Go Back to Home</a>
+            </div>:
             cartItems.map((item,index) => (
                 <CartItem updatePrice={updatePrice} removeItem={removeItem} key={item.id} item={item} index={index}/>
             ))
             }
         </div>
         <hr />
-        <h3>Your Grand total is : {total}</h3>
+        <div>
+          {
+            cartItems.length == 0 ?
+            <div></div>:
+            <h3>Your Grand total is : {total}</h3>
+          }
+        </div>
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./ProductCard.css";
 
 function ProductCard(values) {
@@ -59,7 +60,10 @@ function ProductCard(values) {
         ))}{" "}
         &nbsp;&nbsp;
       </p>
-      <p className="card-text">{values.item.description}</p>
+      <p className="card-text">{values.item.description.substring(1,60)}...</p>
+
+      <p>quantity:&nbsp;</p>
+      
       <button href="#" className="btn btn-success flex-box" onClick={() => handleAddToCart()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
