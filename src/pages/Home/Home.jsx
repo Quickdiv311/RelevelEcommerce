@@ -6,6 +6,7 @@ import { useState,useEffect } from 'react';
 function Home(){
 
     const [products, setProducts] = useState([]);
+    const [itemCount, setItemCount] = useState(0);
 
     useEffect(() => {
       fetch("https://fakestoreapi.com/products?limit=8")
@@ -17,18 +18,30 @@ function Home(){
           o.rating.rate=Math.ceil(Number(o.rating.rate));
         })
         setProducts(res);
+        itemUpdate();
       }); 
     }, []);
+
+    function itemUpdate()
+    {
+      const items = localStorage.getItem('cart');
+
+      if(items)
+      {
+        const cartItems = JSON.parse(items);
+        setItemCount(cartItems.length);
+      }
+    }
 
 
     return(
       <div>
-         <Header/>
+         <Header itemCount={itemCount}/>
          <div className="row">
            {
               products.map((product,i) => (
                 <div className="col-12   col-md-3">
-                <Product key={product.id} item={product} index={i}/>
+                <Product key={product.id} item={product} itemUpdate={itemUpdate} index={i}/>
                 </div>
               ))
            }   

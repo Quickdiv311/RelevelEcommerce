@@ -34,6 +34,7 @@ function ProductCard(values) {
       }
       localStorage.setItem("cart", JSON.stringify(cartItems));
     }
+    values.itemUpdate();
   }
 
   return (

@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react';
 import './header.css';
 
-function Header()
+function Header(props)
 {
-    let cart = localStorage.getItem('cart');
-      let cartItems = JSON.parse(cart);
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      const items = localStorage.getItem('cart');
+
+      if(items)
+      {
+        const cartItems = JSON.parse(items);
+        setCount(cartItems.length);
+      }
+    },[props]);
 
     return(
   <nav className="navbar navbar-expand-md navbar-light">
@@ -16,7 +25,7 @@ function Header()
     <ul className="navbar-nav">
       <li className="nav-item">
         <a className="nav-link" href="/cart">
-        Cart <span className="badge text-bg-primary">{cartItems.length}</span></a>
+        Cart <span className="badge text-bg-primary">{count}</span></a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="/register">Login</a>
