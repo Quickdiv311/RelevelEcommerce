@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useState } from "react";
+import AppContext from "../../../context";
 import "./ProductCard.css";
 
 function ProductCard(values) {
+
+  const {dispatcherEvents} = useContext(AppContext);
 
   const key = values.item.id+"svg";
   let stars = [];
@@ -12,29 +16,7 @@ function ProductCard(values) {
 
   function handleAddToCart()
   {
-    let cart = localStorage.getItem('cart');
-
-    if(!cart)
-    {
-      let cartItems = [];
-      cartItems.push(values.item);
-      localStorage.setItem("cart", JSON.stringify(cartItems));
-    }
-    else
-    {
-      let cartItems = JSON.parse(cart);
-      if(cartItems.find(i=> i.id==values.item.id))
-      {
-          let cartItem = cartItems.find(i=> i.id==values.item.id);
-          cartItem.quantity +=1;
-      }
-      else
-      {
-        cartItems.push(values.item);  
-      }
-      localStorage.setItem("cart", JSON.stringify(cartItems));
-    }
-    values.itemUpdate();
+    dispatcherEvents("ADD_ITEM",values.item);
   }
 
   return (

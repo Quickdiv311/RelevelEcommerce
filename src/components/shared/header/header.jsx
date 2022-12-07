@@ -1,34 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import AppContext from '../../../context';
 import './header.css';
 
 function Header(props)
 {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-      const items = localStorage.getItem('cart');
-
-      if(items)
-      {
-        const cartItems = JSON.parse(items);
-        setCount(cartItems.length);
-      }
-    },[props]);
+    const {cartItems} = useContext(AppContext);
 
     return(
   <nav className="navbar navbar-expand-md navbar-light">
-  <a className="navbar-brand" href="/">Try&Cart</a>
+  <Link className="navbar-brand" to={"/"}>Try&Cart</Link>
   <button className="navbar-toggler" type="button" data-bg-toggle="collapse" data-bg-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav">
       <li className="nav-item">
-        <a className="nav-link" href="/cart">
-        Cart <span className="badge text-bg-primary">{count}</span></a>
+        <Link className="nav-link" to={"/cart"}>
+        Cart <span className="badge text-bg-primary">{cartItems.length}</span></Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/register">Login</a>
+        <Link className="nav-link" to={"/register"}>Login</Link>
       </li>
     </ul>
   </div>
