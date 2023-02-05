@@ -30,8 +30,3 @@
 svg{
     fill: gold;
 }
-
-.stars{
-    display: flex;
-    align-items: center;
-}

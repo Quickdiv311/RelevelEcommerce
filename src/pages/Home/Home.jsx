@@ -13,8 +13,8 @@ function Home(){
       .then((res) => {
         res.forEach(o=>{
           o.quantity=1;
+          o.rating.rate = Math.floor(Number(o.rating.rate));
           o.price=Math.floor(o.price*81);
-          o.rating.rate=Math.ceil(Number(o.rating.rate));
         })
         setProducts(res);
       }); 

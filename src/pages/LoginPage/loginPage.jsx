@@ -21,13 +21,12 @@ function LoginPage(){
                 <input type="text" className="form-control mb-3" placeholder="User Name"/>
 
                 <input type="text" className="form-control mb-3" placeholder="Password"/>
-
-                <button className="btn btn-success float-end mb-2" type="submit">Sign In</button>
+                <div className="btn-container">
+                <button className="btn btn-success sign-button" type="submit">Sign In</button>
+                </div>
                 </form>
-                <br />
-                <br />
                 <div className="btn-pair">
-                <button className="btn btn-primary facebook.btn">
+                <button className="btn btn-primary facebook-btn">
               <img src="https://i.pinimg.com/564x/d2/17/4b/d2174bdef984e49aafabeb437744ca7a.jpg" className=" facebook-img"/>
               Sign In With Facebook</button>
   
